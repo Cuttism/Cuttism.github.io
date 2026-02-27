@@ -463,7 +463,9 @@ body {
     width: 390px;
     height: 100vh;
     background: var(--surface);
-    z-index: 1150;
+    /* must sit above the chatbox widget (z‑index 1500) so its buttons
+       remain clickable when the drawer is visible */
+    z-index: 1600;
     display: flex;
     flex-direction: column;
     box-shadow: -8px 0 40px rgba(0, 0, 0, .15);
@@ -667,38 +669,6 @@ body {
 }
 
 /* ============================================================
-   TOAST NOTIFICATIONS
-============================================================ */
-.toast-container {
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.toast-msg {
-    background: #2c1f1a;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 50px;
-    font-size: .9rem;
-    font-weight: 500;
-    box-shadow: var(--shadow-lg);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all .35s ease;
-    white-space: nowrap;
-}
-
-.toast-msg.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ============================================================
    HEADER / HERO
