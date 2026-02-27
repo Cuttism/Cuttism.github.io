@@ -76,7 +76,6 @@
                 <a href="#contact" class="btn-login ripple">Đăng nhập</a>
                 <a href="#contact" class="btn-signup ripple">Đăng ký</a>
                 <li></li>
-                <li></li>
             </div>
 
             <!-- Mobile footer info -->
@@ -148,7 +147,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/image/3-cach-lam-ga-chien-nuoc-mam-cho-bua-com-gia-dinh-Viet.jpg.webp"
+                    <img src="../image/3-cach-lam-ga-chien-nuoc-mam-cho-bua-com-gia-dinh-Viet.jpg.webp"
                         class="d-block w-100" alt="Gà chiên nước mắm gia đình">
                     <div class="carousel-caption">
                         <h3>Gà Chiên Truyền Thống</h3>
@@ -156,14 +155,14 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/image/cach-lam-ga-chien-nuoc-mam.webp" class="d-block w-100" alt="Nguyên liệu tươi">
+                    <img src="../image/cach-lam-ga-chien-nuoc-mam.webp" class="d-block w-100" alt="Nguyên liệu tươi">
                     <div class="carousel-caption">
                         <h3>Nguyên Liệu Tươi Ngon</h3>
                         <p>Gà tươi chọn lọc kỹ càng</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/image/canh-ga-chien-nuoc-mam.webp" class="d-block w-100" alt="Cánh gà">
+                    <img src="../image/canh-ga-chien-nuoc-mam.webp" class="d-block w-100" alt="Cánh gà">
                     <div class="carousel-caption">
                         <h3>Cánh Gà Giòn Rụm</h3>
                         <p>Giòn tan trong từng miếng cắn</p>
@@ -209,7 +208,7 @@
         <section class="Introduction reveal-up">
             <h2><i class="fas fa-info-circle"></i> GIỚI THIỆU</h2>
             <div class="about">
-                <img src="/image/cach-lam-ga-chien-nuoc-mam.webp" alt="Gà chiên nước mắm">
+                <img src="../image/cach-lam-ga-chien-nuoc-mam.webp" alt="Gà chiên nước mắm">
                 <div class="about-text">
                     <h3>Hương vị đặc trưng miền Nam</h3>
                     <p>Gà chiên nước mắm là món ăn quen thuộc của người Việt, mang đậm hương vị miền Nam. Với lớp da
@@ -227,7 +226,7 @@
             <div class="products">
                 <div class="box">
                     <div class="product-img">
-                        <img src="/image/cach-lam-ga-chien-nuoc-mam.webp" alt="Gà chiên nguyên con">
+                        <img src="../image/cach-lam-ga-chien-nuoc-mam.webp" alt="Gà chiên nguyên con">
                         <span class="product-badge">Bán chạy</span>
                     </div>
                     <div class="product-info">
@@ -241,7 +240,7 @@
                 </div>
                 <div class="box">
                     <div class="product-img">
-                        <img src="/image/canh-ga-chien-nuoc-mam.webp" alt="Gà chiên cánh">
+                        <img src="../image/canh-ga-chien-nuoc-mam.webp" alt="Gà chiên cánh">
                         <span class="product-badge hot">Ưa thích</span>
                     </div>
                     <div class="product-info">
@@ -255,7 +254,7 @@
                 </div>
                 <div class="box">
                     <div class="product-img">
-                        <img src="/image/canh-ga-chien-nuoc-mam.webp" alt="Combo gia đình">
+                        <img src="../image/canh-ga-chien-nuoc-mam.webp" alt="Combo gia đình">
                         <span class="product-badge combo">Combo</span>
                     </div>
                     <div class="product-info">
@@ -471,8 +470,6 @@
         <span class="chat-notification" id="chatNotification">1</span>
     </div>
 
-    <!-- Toast Notification -->
-    <div class="toast-container" id="toastContainer"></div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
@@ -572,7 +569,6 @@
                 cart.push({ name, price, qty: 1 });
             }
             updateCartUI();
-            showToast(`✅ Đã thêm "${name}" vào giỏ!`);
 
             // Badge pop animation
             const badge = document.getElementById('cartBadge');
@@ -623,28 +619,13 @@
             updateCartUI();
         }
 
-        // ============================================================
-        // TOAST NOTIFICATIONS
-        // ============================================================
-        function showToast(message) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = 'toast-msg';
-            toast.textContent = message;
-            container.appendChild(toast);
-            setTimeout(() => toast.classList.add('show'), 10);
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
-
+        
         // ============================================================
         // FORM SUBMIT
         // ============================================================
         function handleSubmit(e) {
             e.preventDefault();
-            showToast('🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ sớm.');
+            // toast removed, just reset form
             e.target.reset();
         }
 
@@ -793,7 +774,4 @@
 
 </body>
 
-
 </html>
-
-
